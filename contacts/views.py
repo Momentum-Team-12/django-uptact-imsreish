@@ -22,6 +22,12 @@ def add_contact(request):
     return render(request, "contacts/add_contact.html", {"form": form})
 
 
+def each_contact(request, pk):
+    contact = get_object_or_404(Contact, pk=pk)
+    return render(request, "contacts/each_contact.html", {
+    "contact": contact
+    })
+
 def edit_contact(request, pk):
     contact = get_object_or_404(Contact, pk=pk)
     if request.method == 'GET':
