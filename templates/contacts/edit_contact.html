@@ -2,6 +2,11 @@
 <h1>Edit Contact</h1>
 
 <div>
+  <p>{% for note in contact.notes.all %}
+    <div class="flex">
+      <div>{{ note.note }}</div>
+    </div>
+    {% endfor %}<a href="{% url 'add_note' pk=contact.pk %}">Add Note</a><br /></p>
   <form action="{% url 'edit_contact' pk=contact.pk %}" method="POST">
     {% csrf_token %} {{ form.as_p }}
     <div>
@@ -9,4 +14,5 @@
     </div>
   </form>
 </div>
+
 {% endblock %}

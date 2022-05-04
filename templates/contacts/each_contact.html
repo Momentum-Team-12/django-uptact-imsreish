@@ -1,10 +1,11 @@
 {% extends "base.html" %} {% block content %}
+<a href="{% url 'list_contacts'%}">Back to Overview</a><br /></p>
 <h1>{{ contact.name }}</h1>
 
 <div>
     <div class="w-33 pa3">
-      <h2>{{ contact.name }}</h2>
-      <h3>{{ contact.birthday }}</h3>
+      <h2>Details:</h2>
+      <h3>Born: {{ contact.birthday }}</h3>
 
       <div class="flex">
         <div class="pr2"><i class="icofont-location-pin"></i></div>
